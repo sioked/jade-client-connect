@@ -38,3 +38,9 @@ the files inside this directory will be compiled as a javascript jade
 template in the ns client namespace. By default the namespace is tpl so
 all teplates will be accessed by calling something like tpl.footer().
 Only one file will be sent back to the client.
+
+##Running Tests & Compiling Source
+```
+cake build
+cake test
+```
