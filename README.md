@@ -22,7 +22,7 @@ app.use(require('./jade-client-connect/')());
   // Assuming you have a file named content.jade in the views folder
   var html = tpl.content({ title: "Hello World" });
 </script
-
+```
 ##Defaults & Options
 ```
 var options = {
