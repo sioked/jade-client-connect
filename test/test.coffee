@@ -53,6 +53,6 @@ exports['Test custom view folder'] = (test) ->
   app.use require('../index.js')({src : "views2"})
   app.listen 1338
   request 'http://localhost:1338/js/templates.js', (err, res, body) ->
-    console.log body
+    console.log "body: #{body}"
     test.ok /tpl.test1\s?=/.test body
     test.done()
