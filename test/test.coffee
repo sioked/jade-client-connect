@@ -1,7 +1,6 @@
 request = require 'request'
 fs = require 'fs'
 rimraf = require 'rimraf'
-path = require 'path'
 
 app = require('connect').createServer()
 app.use require('../index.js')("#{__dirname}/views")

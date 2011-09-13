@@ -18,6 +18,5 @@
     "nodeunit": "0.5.1",
     "request" : "2.1.1",
     "rimraf"  : "latest"
-    "path"    : "latest"
   }
 }
