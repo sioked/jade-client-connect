@@ -6,7 +6,10 @@ client which will have as a javascript file all of the compiled
 templates.
 
 ##How to use
-Copy Git repository into your project
+```
+npm install jade-client-connect
+```
+or clone the git repository locally &
 run 'npm install -d'
 
 ###In your connect server file
