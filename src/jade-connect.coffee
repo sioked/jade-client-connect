@@ -1,21 +1,19 @@
 fs      = require "fs"
 jade    = require "jade"
 path    = require "path"
+watch = require "watch"
 templates = ""
+source = ""
+opts = {}
 
-compile = (options = {}) ->
-  console.log "running compile"
-  src = options.src || "views"
+compile = (src = source, options = opts) ->
   ns = options.ns || "tpl"
-  src = src.slice 1, src.length if src.charAt(0) is "/"
   templates = "window.#{ns} = {};"
-  console.log "starting readdir with dir: #{src}"
   fs.readdir src, (err, files) ->
     if err
       console.log err
     else
       files.forEach (file) ->
-        console.log "compiling file: #{file}"
         filename = "#{src}/#{file}"
         nm = /(.*)\.jade$/.exec(file)[1]
         tpl = fs.readFileSync filename
@@ -23,11 +21,15 @@ compile = (options = {}) ->
         templates += "#{ns}.#{nm} = #{fn};"
   templates
 
-module.exports = (options = {}) ->
-  templates = compile(options)
+module.exports = (src, options = {}) ->
+  throw new Error "Source directory not included" if not src
+  templates = compile src, options
+  source = src
+  opts = options
   url = options.url || "templates.js"
   re = new RegExp ".*#{url}$"
-  compile options
+  watch.watchTree src, ->
+    compile()
 
   (req, res, next) ->
     if re.test req.url

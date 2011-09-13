@@ -6,12 +6,15 @@
   "main": "./lib/index.js",
   "dependencies": {
     "uglify-js" : "1.0.7",
-    "jade"      : "0.15.4"
+    "jade"      : "0.15.4",
+    "watch"     : "0.3.2"
   },
   "devDependencies": {
     "coffee-script": ">= 1.1.2",
     "connect" : "latest",
     "nodeunit": "0.5.1",
-    "request"   : "2.1.1"
+    "request" : "2.1.1",
+    "rimraf"  : "latest"
+    "path"    : "latest"
   }
 }
