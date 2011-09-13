@@ -1,11 +1,14 @@
 {
   "name": "jade-client-connect",
   "description": "Jade Client Connect - A compiler to help use templates on a web client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Ed Siok <@sioked>",
   "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url" : "http://github.com/sioked/jade-client-connect.git"
+  },
   "dependencies": {
-    "uglify-js" : "1.0.7",
     "jade"      : "0.15.4",
     "watch"     : "0.3.2"
   },
