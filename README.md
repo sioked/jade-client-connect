@@ -20,6 +20,8 @@ app.use(require('./jade-client-connect/')(__dirname + "/views"));
 
 ###On the client
 ```
+<!-- Make sure to include the runtime from Jade's source here, see jade for details -->
+<!-- <script src="/scripts/runtime.js"></script> -->
 <script src="/scripts/templates.js"></script>
 <script>
   // Assuming you have a file named content.jade in the views folder
