@@ -1,24 +1,24 @@
-#Jade Client Connect
+# Jade Client Connect
 This is a piece of Middleware for the
 [connect](http://senchalabs.github.com/connect/) framework. It can be
 plugged into Connect servers or Express servers and expose a URL to the
 client which will have as a javascript file all of the compiled
 templates.
 
-##How to use
+## How to use
 ```
 npm install jade-client-connect
 ```
 or clone the git repository locally &
 run 'npm install -d'
 
-###In your connect server file
+### In your connect server file
 ```
 app = require('connect').createServer();
 app.use(require('./jade-client-connect/')(__dirname + "/views"));
 ```
 
-###On the client
+### On the client
 ```
 <!-- Make sure to include the runtime from Jade's source here, see jade for details -->
 <!-- <script src="/scripts/runtime.js"></script> -->
@@ -28,7 +28,7 @@ app.use(require('./jade-client-connect/')(__dirname + "/views"));
   var html = tpl.content({ title: "Hello World" });
 </script
 ```
-##Defaults & Options
+## Defaults & Options
 ```
 var options = {
   ns : 'tpl'
@@ -42,7 +42,7 @@ template in the ns client namespace. By default the namespace is tpl so
 all teplates will be accessed by calling something like tpl.footer().
 Only one file will be sent back to the client.
 
-##Running Tests & Compiling Source
+## Running Tests & Compiling Source
 ```
 cake build
 cake test
